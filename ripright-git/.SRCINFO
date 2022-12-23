@@ -1,0 +1,18 @@
+pkgbase = ripright-git
+	pkgdesc = A minimal automatic CD ripper and tagging utility
+	pkgver = r19.94eb2a8
+	pkgrel = 1
+	url = https://github.com/marcoep/ripright
+	arch = x86_64
+	license = GPL2
+	depends = curl
+	depends = flac
+	depends = cdparanoia
+	depends = libmagick6
+	depends = libdiscid
+	provides = ripright
+	conflicts = ripright
+	source = ripright::git+https://github.com/marcoep/ripright.git
+	sha256sums = SKIP
+
+pkgname = ripright-git
