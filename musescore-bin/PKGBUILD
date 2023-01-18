@@ -3,7 +3,7 @@
 pkgname=musescore
 pkgver=4.0.1
 _2ndver=230121751
-pkgrel=1
+pkgrel=2
 pkgdesc='Create, play and print beautiful sheet music -- static binary'
 arch=(x86_64)
 url=https://musescore.org/
@@ -19,6 +19,8 @@ sha256sums=(d89ce795cc0b54b2554e957b7648135416c810c1bd16fb21ed64686b016b84f4
 package() {
   install -m 755 -d "${pkgdir}/usr/local/bin"
   install -m 755 MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage "${pkgdir}/usr/local/bin/MuseScore"
+  install -m 755 -d "${pkgdir}/usr/local/share/applications"
+  install -m 644 MuseScore.desktop "${pkgdir}/usr/local/share/applications/MuseScore.desktop"
 }
 
 # vim: ts=2 sw=2 et:
