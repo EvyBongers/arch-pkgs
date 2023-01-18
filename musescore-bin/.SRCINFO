@@ -1,0 +1,14 @@
+pkgbase = musescore
+	pkgdesc = Create, play and print beautiful sheet music -- static binary
+	pkgver = 4.0.1
+	pkgrel = 1
+	url = https://musescore.org/
+	arch = x86_64
+	groups = pro-audio
+	license = GPL
+	source = https://github.com/musescore/MuseScore/releases/download/v4.0.1/MuseScore-4.0.1.230121751-x86_64.AppImage
+	source = MuseScore.desktop
+	sha256sums = d89ce795cc0b54b2554e957b7648135416c810c1bd16fb21ed64686b016b84f4
+	sha256sums = 8a511e957f4712aed4918109006ce765e40288c71674cc4ef0d82e8323f3f750
+
+pkgname = musescore
