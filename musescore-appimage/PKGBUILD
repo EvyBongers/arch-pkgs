@@ -1,10 +1,10 @@
 # Maintainer: Evy Bongers <evy@evybongers.nl
 
-pkgname=musescore
+pkgname=musescore-appimage
 pkgver=4.0.1
 _2ndver=230121751
-pkgrel=2
-pkgdesc='Create, play and print beautiful sheet music -- static binary'
+pkgrel=1
+pkgdesc='Create, play and print beautiful sheet music -- AppImage'
 arch=(x86_64)
 url=https://musescore.org/
 license=(GPL)
