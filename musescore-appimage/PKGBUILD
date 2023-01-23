@@ -16,8 +16,18 @@ source=(https://github.com/musescore/MuseScore/releases/download/v${pkgver}/Muse
 sha256sums=(d89ce795cc0b54b2554e957b7648135416c810c1bd16fb21ed64686b016b84f4
             b1aae174789fd64159d2ce26ff27cc46d66c12a8038d6e7e0c059ec4893ae8d2)
 
+prepare() {
+  chmod +x MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage
+  ./MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage install "${srcdir}"
+}
+
 package() {
   install -Dm755 "${srcdir}/bin/MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage" "${pkgdir}/usr/local/bin/MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage"
+  for icon in "${srcdir}"/share/icons/hicolor/*/apps/; do
+      install -Dm755 "${icon}/mscore4portable.png" "${pkgdir}/usr/local/${icon#*${srcdir}/}/MuseScore.png"
+  done
+  install -Dm755 "${srcdir}/share/man/man1/mscore4portable.1.gz" "${pkgdir}/usr/local/share/man/man1/MuseScore.1.gz"
+
   ln -sf "MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage" "${pkgdir}/usr/local/bin/MuseScore"
   install -Dm644 MuseScore.desktop "${pkgdir}/usr/local/share/applications/MuseScore.desktop"
 }
