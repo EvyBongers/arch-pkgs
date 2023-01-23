@@ -26,7 +26,6 @@ package() {
   for icon in "${srcdir}"/share/icons/hicolor/*/apps/; do
       install -Dm755 "${icon}/mscore4portable.png" "${pkgdir}/usr/local/${icon#*${srcdir}/}/MuseScore.png"
   done
-  install -Dm755 "${srcdir}/share/man/man1/mscore4portable.1.gz" "${pkgdir}/usr/local/share/man/man1/MuseScore.1.gz"
 
   ln -sf "MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage" "${pkgdir}/usr/local/bin/MuseScore"
   install -Dm644 MuseScore.desktop "${pkgdir}/usr/local/share/applications/MuseScore.desktop"
