@@ -11,6 +11,7 @@ license=(GPL)
 groups=(pro-audio)
 depends=()
 makedepends=()
+options=(!strip libtool staticlibs)
 source=(https://github.com/musescore/MuseScore/releases/download/v${pkgver}/MuseScore-${pkgver}.${_2ndver}-${arch}.AppImage
         MuseScore.desktop)
 sha256sums=(d89ce795cc0b54b2554e957b7648135416c810c1bd16fb21ed64686b016b84f4
