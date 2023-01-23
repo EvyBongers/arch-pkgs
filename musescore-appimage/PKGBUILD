@@ -17,10 +17,9 @@ sha256sums=(d89ce795cc0b54b2554e957b7648135416c810c1bd16fb21ed64686b016b84f4
             b1aae174789fd64159d2ce26ff27cc46d66c12a8038d6e7e0c059ec4893ae8d2)
 
 package() {
-  install -m 755 -d "${pkgdir}/usr/local/bin"
-  install -m 755 MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage "${pkgdir}/usr/local/bin/MuseScore"
-  install -m 755 -d "${pkgdir}/usr/local/share/applications"
-  install -m 644 MuseScore.desktop "${pkgdir}/usr/local/share/applications/MuseScore.desktop"
+  install -Dm755 "${srcdir}/bin/MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage" "${pkgdir}/usr/local/bin/MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage"
+  ln -sf "MuseScore-${pkgver}.${_2ndver}-x86_64.AppImage" "${pkgdir}/usr/local/bin/MuseScore"
+  install -Dm644 MuseScore.desktop "${pkgdir}/usr/local/share/applications/MuseScore.desktop"
 }
 
 # vim: ts=2 sw=2 et:
